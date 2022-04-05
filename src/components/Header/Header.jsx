@@ -3,5 +3,9 @@ import React, { useState } from "react";
 import "./styles.css";
 
 export function Header () {
-
+    return (
+        <div className="header">
+            <div className="cart"></div>
+        </div>
+    )
 }

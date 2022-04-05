@@ -12,16 +12,16 @@ export function Accordion () {
 
   return (
     <div className="app">
-      <div className="accordian">
-        <div className="accordian-header" onClick={handleOpen}>
+      <div id="accordian" className="accordian">
+        <div id="accordian-header" className="accordian-header" onClick={handleOpen}>
           <div>¿Qué quieres comer hoy?</div>
           <div className="sign">{show ? '-' : '+'}</div>
           </div>
             {show && (
               <div className="accordian-body">
-                <button className="accButton">Tortilla de patata</button>
-                <button className="accButton">Ensalada con cosas</button>
-                <button className="accButton">Paella de verduras</button>
+                <button id="tortilla" className="accButton">Tortilla de patata</button>
+                <button id="ensalada" className="accButton">Ensalada con cosas</button>
+                <button id="paella" className="accButton">Paella de verduras</button>
               </div>
             )}
           </div>
