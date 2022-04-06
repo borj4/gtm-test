@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import ReactDOM from "react-dom";
-
+import { products } from "../../utils/data";
 import "./styles.css";
 
-export function Accordion () {
+export function Accordion (props) {
   // State to show/hide accordion
   const [show, setShow] = useState(false);
   const handleOpen = () => {
@@ -11,7 +10,7 @@ export function Accordion () {
   };
 
   return (
-    <div className="app">
+    <div className="accContainer">
       <div id="accordian" className="accordian">
         <div id="accordian-header" className="accordian-header" onClick={handleOpen}>
           <div>¿Qué quieres comer hoy?</div>
@@ -19,9 +18,13 @@ export function Accordion () {
           </div>
             {show && (
               <div className="accordian-body">
-                <button id="tortilla" className="accButton">Tortilla de patata</button>
-                <button id="ensalada" className="accButton">Ensalada con cosas</button>
-                <button id="paella" className="accButton">Paella de verduras</button>
+                {products.map((e,i)=>{return<button onClick={()=>props.value.handleCart(e)}
+                                                    className="accButton"
+                                                    key={i}
+                                                    id={'product'+{i}}>
+                                                    {e.name}
+                                            </button>
+                })}
               </div>
             )}
           </div>
