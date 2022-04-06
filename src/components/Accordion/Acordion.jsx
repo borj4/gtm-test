@@ -18,7 +18,8 @@ export function Accordion (props) {
           </div>
             {show && (
               <div className="accordian-body">
-                {products.map((e,i)=>{return<button onClick={()=>props.value.handleCart(e)}
+                {products.map((e,i)=>{return<button 
+                                                    // onClick={()=>props.value.handleCart(e)}
                                                     className="accButton"
                                                     key={i}
                                                     id={'product'+{i}}>

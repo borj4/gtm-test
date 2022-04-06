@@ -19,7 +19,6 @@ const App =()=>  {
   //   event: 'pageview'
   // });
 
-
   const handleCart = (product) => {
     setCard([...cart, product])
   }
