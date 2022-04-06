@@ -15,9 +15,9 @@ const App =()=>  {
   const [cart, setCard] = useState([]);
   // const [viewCart, setViewCart] = useState(true);
 
-  window.dataLayer.push({
-    event: 'pageview'
-  });
+  // window.dataLayer.push({
+  //   event: 'pageview'
+  // });
 
 
   const handleCart = (product) => {
