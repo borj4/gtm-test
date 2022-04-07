@@ -6,7 +6,7 @@ import { Header } from './components/Header/Header';
 import { Youtube } from './components/Video/Video';
 
 const tagManagerArgs = {
-  gtmId: 'GTM-W4LSZWJ'
+  gtmId: 'GTM-5VBPW49'
 }
 
 TagManager.initialize(tagManagerArgs);

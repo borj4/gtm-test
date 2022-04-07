@@ -1,8 +1,9 @@
 import React from "react";
 
 export const Youtube = () => (
-  <div id="video" className="video-responsive">
-    <iframe width="560"
+  <div id="video_div" className="video-responsive">
+    <iframe id="video_iframe"
+    width="560"
     height="315"
     src="https://www.youtube.com/embed/NUYvbT6vTPs"
     title="YouTube video player"
