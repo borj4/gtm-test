@@ -12,17 +12,6 @@ const tagManagerArgs = {
 TagManager.initialize(tagManagerArgs);
 
 const App =()=>  {
-  const [cart, setCard] = useState([]);
-  // const [viewCart, setViewCart] = useState(true);
-
-  // window.dataLayer.push({
-  //   event: 'pageview'
-  // });
-
-  const handleCart = (product) => {
-    setCard([...cart, product])
-  }
-
 
   return (
     <div className="App">

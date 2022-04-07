@@ -6,7 +6,7 @@ export function Accordion (props) {
   // State to show/hide accordion
   const [show, setShow] = useState(false);
   const handleOpen = () => {
-    setShow(!show); // Toggle accordion
+    setShow(!show);
   };
 
   return (
@@ -18,13 +18,12 @@ export function Accordion (props) {
           </div>
             {show && (
               <div className="accordian-body">
-                {products.map(({name},i)=>{return<button 
-                                                    // onClick={()=>props.value.handleCart(e)}
+                {products.map(({name},i)=>{return (<button 
                                                     className="accButton"
                                                     key={i}
                                                     id={`product ${name}`}>
                                                     {name}
-                                            </button>
+                                                  </button>)
                 })}
               </div>
             )}
