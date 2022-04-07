@@ -10,10 +10,10 @@ export function Accordion (props) {
   };
 
   return (
-    <div className="accContainer">
+    <div id="contenedor-accordian" className="accContainer">
       <div id="accordian" className="accordian">
         <div id="accordian-header" className="accordian-header" onClick={handleOpen}>
-          <div>¿Qué quieres comer hoy?</div>
+          <div id="">¿Qué quieres comer hoy?</div>
           <div className="sign">{show ? '-' : '+'}</div>
           </div>
             {show && (
@@ -21,7 +21,7 @@ export function Accordion (props) {
                 {products.map(({name},i)=>{return (<button 
                                                     className="accButton"
                                                     key={i}
-                                                    id={`product ${name}`}>
+                                                    id={`product-${i}`}>
                                                     {name}
                                                   </button>)
                 })}
