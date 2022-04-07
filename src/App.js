@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import TagManager from 'react-gtm-module/dist/TagManager';
+import TagManager from 'react-gtm-module/dist/TagManager';
 import './App.css';
 import { Accordion } from './components/Accordion/Acordion';
 import { Header } from './components/Header/Header';
