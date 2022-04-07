@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TagManager from 'react-gtm-module/dist/TagManager';
 import './App.css';
 import { Accordion } from './components/Accordion/Acordion';
@@ -17,7 +17,7 @@ const App =()=>  {
     <div className="App">
       <Header/>
       <Youtube/>
-      <Accordion value={handleCart}/>
+      <Accordion/>
     </div>
   );
   }
