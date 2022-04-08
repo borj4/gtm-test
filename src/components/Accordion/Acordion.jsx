@@ -9,30 +9,6 @@ export function Accordion (props) {
   const handleOpen = () => {
     setShow(!show);
   };
-  
-  const [cart, setCart] = useState([]);
-  const itemsToBuy = (element, index) => {
-    // si el elemento clicado existe en el carrito...
-    // let oneMore = cart;
-    console.log(`evaluar ${cart.some(e=>e.name===element.name)}`);
-
-    if (cart.some(e=>e.name===element.name)) {
-    
-      cart.map((f,i,array)=>{
-        if (f.name===element.name) {
-          array[i].amount++;
-          setCart([...array]);
-        }
-        return [];
-      })
-    }
-    else {
-      const newProduct = products[index];
-      newProduct.amount = 1;
-      setCart([...cart, newProduct]);
-    }
-  };
-
 
   return (
     <div id="contenedor-accordian" className="accContainer">
@@ -44,7 +20,7 @@ export function Accordion (props) {
             {show && (
               <div className="accordian-body">
                 {products.map((e,i)=>{return  <button 
-                                                      onClick={()=>{itemsToBuy(e,i)}}
+                                                      onClick={()=>{props.value(e,i,products)}}
                                                       className="accButton"
                                                       key={i}
                                                       id={`product-${i}`}>
