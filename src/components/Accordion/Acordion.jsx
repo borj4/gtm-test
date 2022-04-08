@@ -13,22 +13,18 @@ export function Accordion (props) {
   const [cart, setCart] = useState([]);
   const itemsToBuy = (element, index) => {
     // si el elemento clicado existe en el carrito...
-    let oneMore = cart;
-    if (cart.some(e=>e.name===element.name)) { ////// el fallo está aquí, en cómo se evalúa el if. Volveré.
-      // me copias el estado
-      // lo recorres
+    // let oneMore = cart;
+    console.log(`evaluar ${cart.some(e=>e.name===element.name)}`);
+
+    if (cart.some(e=>e.name===element.name)) {
+    
       cart.map((f,i,array)=>{
-        // si el elemento clicado coincide con el que estoy iterando...
         if (f.name===element.name) {
-          // sumas uno a su propiedad de cantidad
-          oneMore[i].amount++;
-          console.log(array);
-          // y me lo guardas la copia actualizada en el estado, pisando lo anterior
+          array[i].amount++;
+          setCart([...array]);
         }
         return [];
       })
-      setCart(oneMore);
-
     }
     else {
       const newProduct = products[index];
