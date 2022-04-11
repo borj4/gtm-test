@@ -14,12 +14,14 @@ const App =()=>  {
 
   const [cart, setCart] = useState([]);
 
-  const itemsToBuy = (element, index, products) => {
-
+  const itemsToBuy = (mode, element, index, products) => {
+    // mode = true increase amount 1 step; mode = false decrease amount 1 step; 
     if (cart.some(e=>e.name===element.name)) { 
       cart.map((f,i,array)=>{
         if (f.name===element.name) {
-          array[i].amount++;
+          mode ?
+          array[i].amount++ :
+          array[i].amount-- ;
           setCart([...array]);
         }
         return [];

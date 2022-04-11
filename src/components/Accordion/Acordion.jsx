@@ -19,13 +19,14 @@ export function Accordion (props) {
           </div>
             {show && (
               <div className="accordian-body">
-                {products.map((e,i)=>{return  <button 
-                                                      onClick={()=>{props.value(e,i,products)}}
-                                                      className="accButton"
-                                                      key={i}
-                                                      id={`product-${i}`}>
-                                                      {e.name}
-                                                    </button>
+                {products.map((e,i)=>{return  <div 
+                                                className="accButton"
+                                                key={i}
+                                                id={`product-${i}`}>
+                                                <p> {e.name} </p>
+                                                <button onClick={()=>{props.value(true,e,i,products)}}>+</button>
+                                                <button onClick={()=>{props.value(false,e,i,products)}}>-</button>
+                                              </div>
                 })}
               </div>
             )}
