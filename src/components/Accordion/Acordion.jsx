@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import { products } from "../../utils/data";
 import "./styles.css";
 
-export function Accordion (props) {
+export function Accordion ({value}) {
   // State to show/hide accordion
   const [show, setShow] = useState(false);
+  
+  const {itemsToBuy, preCart, setCart} = value;
+
   
   const handleOpen = () => {
     setShow(!show);
   };
+
+  const addToCart = () => {
+    setCart(...preCart)
+  }
 
   return (
     <div id="contenedor-accordian" className="accContainer">
@@ -24,10 +31,16 @@ export function Accordion (props) {
                                                 key={i}
                                                 id={`product-${i}`}>
                                                 <p> {e.name} </p>
-                                                <button onClick={()=>{props.value(true,e,i,products)}}>+</button>
-                                                <button onClick={()=>{props.value(false,e,i,products)}}>-</button>
+                                                <button onClick={()=>{itemsToBuy(true,e,i,products)}}> + </button>
+                                                <p>
+                                                  { preCart.length > 0 ? 
+                                                    preCart.map(search=>{ if (search.name===e.name){ return search.amount } else return 0 }) :
+                                                    0 }
+                                                </p>
+                                                <button onClick={()=>{itemsToBuy(false,e,i,products)}}> - </button>
                                               </div>
                 })}
+              <button onClick={addToCart}>Añadir al carrito</button> 
               </div>
             )}
           </div>

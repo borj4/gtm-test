@@ -32,6 +32,7 @@
     margin-right: 5px;
     display: flex;
     width: 95%;
+    justify-content: space-between;
   }
   /* @keyframes animation {
     from {height: 0px;}

@@ -12,17 +12,23 @@ TagManager.initialize(tagManagerArgs);
 
 const App =()=>  {
 
-  const [cart, setCart] = useState([]);
+  const [preCart, setPreCart] = useState([]);
+  const [cart, setCart] = useState();
+
 
   const itemsToBuy = (mode, element, index, products) => {
     // mode = true increase amount 1 step; mode = false decrease amount 1 step; 
-    if (cart.some(e=>e.name===element.name)) { 
-      cart.map((f,i,array)=>{
+    if (preCart.some(e=>e.name===element.name)) { 
+      
+      preCart.map((f,i,array)=>{
         if (f.name===element.name) {
           mode ?
           array[i].amount++ :
-          array[i].amount-- ;
-          setCart([...array]);
+          array[i].amount--;
+          
+          if (array[i].amount < 1) {array[i].amount = 0};
+
+          setPreCart([...array]);
         }
         return [];
       })
@@ -30,15 +36,24 @@ const App =()=>  {
     else {
       const newProduct = products[index];
       newProduct.amount = 1;
-      setCart([...cart, newProduct]);
+      setPreCart([...preCart, newProduct]);
     }
   };
 
+  
+
+  const mrPropper = {
+    preCart,
+    itemsToBuy,
+    cart,
+    setCart
+  }
+
   return (
     <div className="App">
-      <Header/>
-      <Youtube/>
-      <Accordion value={itemsToBuy}/>
+      <Header />
+      <Youtube />
+      <Accordion value={mrPropper} />
     </div>
   );
   }
