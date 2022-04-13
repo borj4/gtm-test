@@ -40,13 +40,11 @@ const App =()=>  {
     }
   };
 
-  
-
   const mrPropper = {
     preCart,
     itemsToBuy,
     cart,
-    setCart
+    setCart 
   }
 
   return (
@@ -54,8 +52,9 @@ const App =()=>  {
       <Header />
       <Youtube />
       <Accordion value={mrPropper} />
+      <div></div>
     </div>
   );
-  }
+}
 
 export default App;

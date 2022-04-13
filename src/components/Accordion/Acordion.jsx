@@ -6,7 +6,7 @@ export function Accordion ({value}) {
   // State to show/hide accordion
   const [show, setShow] = useState(false);
   
-  const {itemsToBuy, preCart, setCart} = value;
+  const {itemsToBuy, preCart, setCart } = value;
 
   
   const handleOpen = () => {
@@ -15,7 +15,7 @@ export function Accordion ({value}) {
 
   const addToCart = () => {
     setCart(...preCart)
-  }
+  };
 
   return (
     <div id="contenedor-accordian" className="accContainer">
@@ -40,7 +40,7 @@ export function Accordion ({value}) {
                                                 <button onClick={()=>{itemsToBuy(false,e,i,products)}}> - </button>
                                               </div>
                 })}
-              <button onClick={addToCart}>Añadir al carrito</button> 
+              <button onClick={addToCart}>Añadir e ir al carrito</button> 
               </div>
             )}
           </div>
