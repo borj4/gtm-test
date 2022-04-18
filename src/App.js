@@ -6,12 +6,6 @@ import { Youtube } from './components/Video/Video';
 import './App.css';
 import { products } from "./utils/data";
 
-
-const tagManagerArgs = {
-  gtmId: 'GTM-5VBPW49'
-}
-TagManager.initialize(tagManagerArgs);
-
 const App =()=>  {
 
   const [preCart, setPreCart] = useState([]);
