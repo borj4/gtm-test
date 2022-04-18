@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { products } from "../../utils/data";
 
 export function Accordion ({value}) {
   // State to show/hide accordion

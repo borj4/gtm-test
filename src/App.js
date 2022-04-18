@@ -4,7 +4,7 @@ import { Accordion } from './components/Accordion/Acordion';
 import { Header } from './components/Header/Header';
 import { Youtube } from './components/Video/Video';
 import './App.css';
-import { products } from "./utils/data";
+// import { products } from "./utils/data";
 
 
 const tagManagerArgs = {
