@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import TagManager from 'react-gtm-module/dist/TagManager';
+// import TagManager from 'react-gtm-module/dist/TagManager';
 import { Accordion } from './components/Accordion/Acordion';
 import { Header } from './components/Header/Header';
 import { Youtube } from './components/Video/Video';
 import './App.css';
-import { products } from "./utils/data";
+// import { products } from "./utils/data";
 
 const App =()=>  {
 
