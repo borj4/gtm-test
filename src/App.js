@@ -13,15 +13,24 @@ const tagManagerArgs = {
 TagManager.initialize(tagManagerArgs);
 
 const App =()=>  {
-  const [cart, setCart] = useState([]);
 
-  const itemsToBuy = (element, index, products) => {
+  const [preCart, setPreCart] = useState([]);
+  const [cart, setCart] = useState();
 
-    if (cart.some(e=>e.name===element.name)) { 
-      cart.map((e,i,a)=>{
-        if (e.name===element.name) {
-          a[i].amount++;
-          setCart([...a]);
+
+  const itemsToBuy = (mode, element, index, products) => {
+    // mode = true increase amount 1 step; mode = false decrease amount 1 step; 
+    if (preCart.some(e=>e.name===element.name)) { 
+      
+      preCart.map((f,i,array)=>{
+        if (f.name===element.name) {
+          mode ?
+          array[i].amount++ :
+          array[i].amount--;
+          
+          if (array[i].amount < 1) {array[i].amount = 0};
+
+          setPreCart([...array]);
         }
         return [];
       })
@@ -29,32 +38,23 @@ const App =()=>  {
     else {
       const newProduct = products[index];
       newProduct.amount = 1;
-      setCart([...cart, newProduct]);
+      setPreCart([...preCart, newProduct]);
     }
   };
 
-  const showHowMany = (input) => {
-      if (products.some(e=>e.name===input.name)){
-        return <p>{input.amount}</p>
-      }
-  }
-
-
-  const misterPropper = {
-    // functions
+  const mrPropper = {
+    preCart,
     itemsToBuy,
-    showHowMany,
-    // state
     cart,
-    // data
-    products,
+    setCart 
   }
 
   return (
     <div className="App">
-      <Header/>
-      <Youtube/>
-      <Accordion value={misterPropper}/>
+      <Header />
+      <Youtube />
+      <Accordion value={mrPropper} />
+      <div></div>
     </div>
   );
 }
