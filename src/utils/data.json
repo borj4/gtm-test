@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Tortilla de Patata",
+        "price": 5,
+        "amount": 0
+    },
+    {
+        "name": "Arroz con cosas",
+        "price": 7,
+        "amount": 0
+    },
+    {
+        "name": "Cachopo leonés",
+        "price": 15,
+        "amount": 0
+    },
+    {
+        "name": "Ensaladilla ucraniana",
+        "price": 6,
+        "amount": 0
+    },
+    {
+        "name": "Paella de verduras",
+        "price": 12,
+        "amount": 0
+    },
+    {
+        "name": "Salmorejo",
+        "price": 4,
+        "amount": 0
+    },
+    {
+        "name": "Sanwich mixto",
+        "price": 3,
+        "amount": 0
+    },
+    {
+        "name": "Torreznos light",
+        "price": 6,
+        "amount": 0
+    }
+]

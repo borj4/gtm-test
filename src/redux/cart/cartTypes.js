@@ -1,0 +1,2 @@
+export const MORE_PRODUCT = 'MORE_PRODUCT'
+export const LESS_PRODUCT = 'LESS_PRODUCT'
