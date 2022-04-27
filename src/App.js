@@ -1,56 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 // import TagManager from 'react-gtm-module/dist/TagManager';
-import { Accordion } from './components/Accordion/Acordion';
-import { Header } from './components/Header/Header';
-import { Youtube } from './components/Video/Video';
+import { Accordion } from './OldComponents/Accordion/Acordion';
+import { Header } from './OldComponents/Header/Header';
+import { Youtube } from './OldComponents/Video/Video';
+import { Cart } from './OldComponents/Cart/Cart';
 import './App.css';
-// import { products } from "./utils/data";
 
-const App =()=>  {
-
-  const [preCart, setPreCart] = useState([]);
-  const [cart, setCart] = useState();
+const App = () =>  {
 
 
-  const itemsToBuy = (mode, element, index, products) => {
-    // mode = true increase amount 1 step; mode = false decrease amount 1 step; 
-    if (preCart.some(e=>e.name===element.name)) { 
-      
-      preCart.map((f,i,array)=>{
-        if (f.name===element.name) {
-          mode ?
-          array[i].amount++ :
-          array[i].amount--;
-          
-          if (array[i].amount < 1) {array[i].amount = 0};
-
-          setPreCart([...array]);
-        }
-        return [];
-      })
-    }
-    else {
-      const newProduct = products[index];
-      newProduct.amount = 1;
-      setPreCart([...preCart, newProduct]);
-    }
-  };
-
-  const mrPropper = {
-    preCart,
-    itemsToBuy,
-    cart,
-    setCart 
-  }
 
   return (
     <div className="App">
       <Header />
-      <Youtube />
-      <Accordion value={mrPropper} />
-      <div></div>
+      <BrowserRouter>
+        <Switch >
+          {/* <Route exact path="/" component={Accordion}/>
+          <Route path="/video" component={Youtube}/>
+          <Route path="/cart" component={Cart}/> */}
+        </Switch >
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
