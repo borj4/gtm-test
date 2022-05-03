@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import cartReducer from './redux/reducers/cartReducer';
@@ -8,9 +8,11 @@ import { createStore } from 'redux';
 
 const store = createStore(cartReducer);
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+
+root.render(
   <Provider store={store}>
-    <App />,
-  </Provider>,
-  document.getElementById('root')
-);
+    <App/>
+  </Provider>
+)

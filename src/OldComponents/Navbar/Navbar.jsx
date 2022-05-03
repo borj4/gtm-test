@@ -5,14 +5,17 @@ import "./styles.css"
 const Navbar = () => {
  
     return (
-    <nav>
-      <Link to='/'>Home chachi</Link>
-      <br/>
-      <Link to='/video'>Vídeo chachi</Link>
-      <br/>
-      <Link to='/cart'>Carrito chachi</Link>
-      <br/>
-    </nav>
+    <div className="Nav">
+      <p>esto es el nav</p>
+      <nav>
+        <Link to='/' >Home chachi</Link>
+        <br/>
+        {/* <Link to='/video'>Vídeo chachi</Link> */}
+        <br/>
+        {/* <Link to='/cart'>Carrito chachi</Link> */}
+        <br/>
+      </nav>
+    </div>
   )
 }
 
