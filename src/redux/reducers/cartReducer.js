@@ -1,5 +1,5 @@
 import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING } from '../actions/cartTypesActions'
-import { products } from '../../utils/data'
+import { products } from '../data/data'
 
 const initState = {
     items: products,

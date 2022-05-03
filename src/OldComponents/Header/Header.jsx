@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../Cart/Cart"
+import Navbar from "../Navbar"
 import "./styles.css";
 
-export function Header () {
+function Header () {
     return (
         <div className="header">
             <h1>Mi web supermegachachi</h1>
@@ -11,3 +11,4 @@ export function Header () {
         </div>
     );
 }
+export default Header

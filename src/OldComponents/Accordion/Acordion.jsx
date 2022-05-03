@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
-import { products } from "../../utils/data";
+// import { products } from "../../utils/data";
 
-export function Accordion ({value}) {
+function Accordion ({value}) {
   // State to show/hide accordion
   const [show, setShow] = useState(false);
   
@@ -25,7 +25,7 @@ export function Accordion ({value}) {
           <div id="">¿Qué quieres comer hoy?</div>
           <div className="sign">{show ? '-' : '+'}</div>
           </div>
-            {show && (
+            {/* {show && (
               <div className="accordian-body">
                 {products.map((e,i)=>{return  <div 
                                                 className="accButton"
@@ -43,8 +43,9 @@ export function Accordion ({value}) {
                 })}
               <button id="addToCart" onClick={addToCart}>Añadir e ir al carrito</button> 
               </div>
-            )}
+            )} */}
           </div>
     </div>
   );
 }
+export default Accordion
