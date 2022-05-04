@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Youtube = () => (
+const Youtube = () => (
   <div id="video_div" className="video-responsive">
     <iframe id="video_iframe"
     width="560"
@@ -13,4 +13,5 @@ export const Youtube = () => (
     </iframe>
   </div>
 );
+export default Youtube
 

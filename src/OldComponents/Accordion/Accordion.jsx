@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./styles.css";
 // import { products } from "../../utils/data";
 
-function Accordion ({value}) {
+const Accordion = ({value}) => {
   // State to show/hide accordion
   const [show, setShow] = useState(false);
   
-  const {itemsToBuy, preCart, setCart } = value;
+  // const {itemsToBuy, preCart, setCart } = value;
 
   
   const handleOpen = () => {
@@ -14,11 +14,12 @@ function Accordion ({value}) {
   };
   
 
-  const addToCart = () => {
-    setCart(...preCart)
-  };
+  // const addToCart = () => {
+  //   setCart(...preCart)
+  // };
 
   return (
+    // <div>Heeeeeeeeeeeey soy un acoooordeoooon</div>
     <div id="contenedor-accordian" className="accContainer">
       <div id="accordian" className="accordian">
         <div id="accordian-header" className="accordian-header" onClick={handleOpen}>

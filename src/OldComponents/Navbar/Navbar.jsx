@@ -5,15 +5,14 @@ import "./styles.css"
 const Navbar = () => {
  
     return (
-    <div className="Nav">
-      <p>esto es el nav</p>
+    <div className="nav">
       <nav>
-        <Link to='/' >Home chachi</Link>
-        <br/>
-        {/* <Link to='/video'>Vídeo chachi</Link> */}
-        <br/>
-        {/* <Link to='/cart'>Carrito chachi</Link> */}
-        <br/>
+        <Link className="link" to='/'>Home chachi</Link>
+        
+        <Link className="link" to='/video'>Vídeo chachi</Link>
+        
+        <Link className="link" to='/cart'>Carrito chachi</Link>
+        
       </nav>
     </div>
   )
